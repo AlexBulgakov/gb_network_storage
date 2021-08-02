@@ -32,6 +32,8 @@ public class Server {
 
 
             ChannelFuture f = b.bind(port).sync();
+
+            System.out.println("Server started");
             f.channel().closeFuture().sync();
         } finally {
             workerGroup.shutdownGracefully();
